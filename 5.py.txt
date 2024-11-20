@@ -1,0 +1,8 @@
+import re
+
+text = "@John: Šis ir lielisks produkts!!! Vai ne? 👏👏👏 http://example.com"
+
+# Noņemam liekos simbolus un URL
+clean_text = re.sub(r'http\S+|@[\w]+|[^\w\s]', '', text)
+clean_text = clean_text.lower()  # Pārvēršam uz maziem burtiem
+print(clean_text)

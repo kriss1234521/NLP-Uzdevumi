@@ -1,0 +1,14 @@
+import spacy
+
+# Ielādē spacy modeli
+nlp = spacy.load('lv_core_news_sm')
+
+# Teksts
+text = "Valsts prezidents Egils Levits piedalījās pasākumā, ko organizēja Latvijas Universitāte."
+
+# Apstrādā tekstu
+doc = nlp(text)
+
+# Atpazīt un izdrukāt īpašas vienības
+for ent in doc.ents:
+    print(f"{ent.text} ({ent.label_})")

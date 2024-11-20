@@ -1,0 +1,9 @@
+from langdetect import detect
+
+# Teksti
+text1 = "Šodien ir saulaina diena."
+text2 = "Today is a sunny day."
+
+# Valodas noteikšana
+print(detect(text1))  # Latviešu valoda
+print(detect(text2))  # Angļu valoda

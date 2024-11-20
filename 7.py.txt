@@ -1,0 +1,21 @@
+import spacy
+
+# Ielādē spacy modeli
+nlp = spacy.load('en_core_web_md')
+
+# Vārdi
+words = ["māja", "dzīvoklis", "jūra"]
+
+# Iegūst vektorus
+vectors = [nlp(word).vector for word in words]
+
+# Salīdzina līdzību starp vārdiem
+similarity_matrix = []
+for i in range(len(vectors)):
+    row = []
+    for j in range(len(vectors)):
+        similarity = nlp.vocab.vectors.cosine(vectors[i], vectors[j])
+        row.append(similarity)
+    similarity_matrix.append(row)
+
+print(similarity_matrix)

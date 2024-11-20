@@ -1,0 +1,13 @@
+import nltk
+from collections import Counter
+
+# Teksts
+text = "Mākoņainā dienā kaķis sēdēja uz palodzes. Kaķis domāja, kāpēc debesis ir pelēkas. Kaķis gribēja redzēt sauli, bet saule slēpās aiz mākoņiem."
+
+# Pārvērst tekstu uz maziem burtiem un sadalīt vārdos
+nltk.download('punkt')
+words = nltk.word_tokenize(text.lower())  # Pārvērš uz maziem burtiem un sadala vārdos
+
+# Aprēķināt vārdu biežumu
+word_freq = Counter(words)
+print(word_freq)

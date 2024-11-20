@@ -1,0 +1,19 @@
+from textblob import TextBlob
+
+# Teikumi
+sentences = [
+    "Šis produkts ir lielisks, esmu ļoti apmierināts!",
+    "Esmu vīlies, produkts neatbilst aprakstam.",
+    "Neitrāls produkts, nekas īpašs."
+]
+
+# Noskaņojuma analīze
+for sentence in sentences:
+    blob = TextBlob(sentence)
+    sentiment = blob.sentiment.polarity
+    if sentiment > 0:
+        print(f"{sentence} -> Pozitīvs")
+    elif sentiment < 0:
+        print(f"{sentence} -> Negatīvs")
+    else:
+        print(f"{sentence} -> Neitrāls")
